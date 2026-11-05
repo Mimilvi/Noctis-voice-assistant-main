@@ -1,0 +1,73 @@
+# В репозитории лежит только то, что нужно, чтобы собрать и запустить Noctis.
+# Не входят: секреты, данные пользователей, результаты сборки, виртуальные окружения, кэши и папки редакторов.
+
+# --- Секреты и ключи подписи ---
+.env
+server/data/secret.key
+*.jks
+*.keystore
+*.pem
+*.p12
+app/android/key.properties
+
+# --- Сервер: данные, журналы, модели ---
+server/data/*
+!server/data/.gitkeep
+server/logs*/
+server/models/
+server/.pytest_cache/
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# --- Сайт: собранное приложение лежит рядом при публикации, в репозиторий не входит ---
+site/downloads/*
+!site/downloads/.gitkeep
+
+# --- Мобильное приложение (Flutter / Android) ---
+app/build/
+app/.dart_tool/
+app/.flutter-plugins-dependencies
+app/.flutter-plugins
+app/.packages
+app/.pub-cache/
+app/.pub/
+app/android/.gradle/
+app/android/local.properties
+app/android/**/GeneratedPluginRegistrant.java
+*.apk
+*.aab
+
+# --- Прошивка (PlatformIO / ESP-IDF) ---
+firmware/.pio/
+firmware/managed_components/
+firmware/dependencies.lock
+firmware/sdkconfig.*
+!firmware/sdkconfig.defaults
+firmware/include/config.h
+firmware/tests/build/
+
+# --- Обучение слова пробуждения: рабочие данные и результаты оценки ---
+wakeword/work/
+wakeword/trained_models/
+wakeword/models/*_eval_*.json
+*.wav
+*.npy
+
+# --- Архивы поставки и временные файлы ---
+*.zip
+*.log
+*.tmp
+*.bak
+
+# --- Редакторы и система ---
+.vscode/
+.idea/
+*.iml
+*.swp
+.DS_Store
+Thumbs.db
